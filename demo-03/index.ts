@@ -77,3 +77,8 @@ printArray(["a", "b", "c"]);
 
 let ar4 : string[] = ["a", "b", "c"];
 ar4.push("d");
+
+// ================================================================================================
+
+console.log(ar4); // ["a", "b", "c", "d"]
+console.log(...ar4); // a b c d spread operator
