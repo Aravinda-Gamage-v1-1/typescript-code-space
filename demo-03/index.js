@@ -57,6 +57,25 @@ console, ar4); // a b c d spread operator
 // ================================================================================================
 var ar5; // Tuple
 ar5 = [1, 2];
-// ================================================================================================
 var x = ar5[0], y = ar5[1];
 console.log(x, y);
+// ================================================================================================
+var Color;
+(function (Color) {
+    Color[Color["Red"] = 10] = "Red";
+    Color[Color["Green"] = 100] = "Green";
+    Color[Color["Blue"] = 200] = "Blue";
+})(Color || (Color = {}));
+console.log(Color.Red, Color.Green, Color.Blue);
+var Value;
+(function (Value) {
+    Value["A"] = "Apple";
+    Value["B"] = "Banana";
+    Value["C"] = "Cherry";
+})(Value || (Value = {}));
+console.log(Value.A, Value.B, Value.C);
+// ================================================================================================
+function add(x, y) {
+    return x + y;
+}
+console.log(add(20, 40));

@@ -92,3 +92,27 @@ let [x, y] = ar5;
 console.log(x, y);
 
 // ================================================================================================
+
+enum Color {
+  Red = 10,
+  Green = 100,
+  Blue = 200,
+}
+
+console.log(Color.Red, Color.Green, Color.Blue); 
+
+enum Value {
+  A = "Apple",
+  B = "Banana",
+  C = "Cherry",
+}
+
+console.log(Value.A, Value.B, Value.C);
+
+// ================================================================================================
+
+function add(x: number, y: number): number {
+  return x + y;
+}
+
+console.log(add(20, 40));
