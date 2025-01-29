@@ -60,6 +60,7 @@ ar5 = [1, 2];
 var x = ar5[0], y = ar5[1];
 console.log(x, y);
 // ================================================================================================
+// Enums
 var Color;
 (function (Color) {
     Color[Color["Red"] = 10] = "Red";
@@ -75,7 +76,45 @@ var Value;
 })(Value || (Value = {}));
 console.log(Value.A, Value.B, Value.C);
 // ================================================================================================
+// Functions
 function add(x, y) {
     return x + y;
 }
 console.log(add(20, 40));
+console.log(typeof (add(20, 40)));
+// --------------------------------------------------------------------------------
+function concat(x, y) {
+    return x + " " + y;
+}
+console.log(concat("Hello", "World"));
+// --------------------------------------------------------------------------------
+function add2(x, y) {
+    if (y === void 0) { y = 20; }
+    return x + y;
+}
+console.log(add2(20));
+// --------------------------------------------------------------------------------
+function add3(x, y) {
+    console.log(y);
+}
+add3(10, 20);
+// --------------------------------------------------------------------------------
+// function add4(x: number, y: number) : never {
+//   throw new Error("Not Implemented");
+// }
+// add4(10, 20);
+// --------------------------------------------------------------------------------
+function calculate(x, y, operation) {
+    var result = operation(x, y);
+    return result;
+}
+console.log(calculate(10, 20, add));
+function add5(x, y) {
+    return x + y;
+}
+function calculate2(x, y, operation) {
+    var result = operation(x, y);
+    return result;
+}
+console.log(calculate2(40, 20, add5));
+// ================================================================================================

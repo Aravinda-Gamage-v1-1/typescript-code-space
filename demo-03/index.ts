@@ -92,6 +92,7 @@ let [x, y] = ar5;
 console.log(x, y);
 
 // ================================================================================================
+// Enums
 
 enum Color {
   Red = 10,
@@ -110,9 +111,65 @@ enum Value {
 console.log(Value.A, Value.B, Value.C);
 
 // ================================================================================================
+// Functions
 
-function add(x: number, y: number): number {
+function add(x: number, y: number) : number {
   return x + y;
 }
 
 console.log(add(20, 40));
+console.log(typeof(add(20, 40)));
+
+// --------------------------------------------------------------------------------
+
+function concat(x: string, y: string) {
+  return x + " " + y;
+}
+
+console.log(concat("Hello", "World"));
+
+// --------------------------------------------------------------------------------
+
+function add2(x: number, y: number = 20) : number {
+  return x + y;
+}
+
+console.log(add2(20));
+
+// --------------------------------------------------------------------------------
+
+function add3(x: number, y: number) : void {
+  console.log(y);
+}
+add3(10, 20);
+
+// --------------------------------------------------------------------------------
+
+// function add4(x: number, y: number) : never {
+//   throw new Error("Not Implemented");
+// }
+// add4(10, 20);
+
+// --------------------------------------------------------------------------------
+
+function calculate(x: number, y: number, operation: (x: number, y: number) => number) : number {
+  const result = operation(x, y);
+  return result;
+}
+console.log(calculate(10, 20, add));
+
+// --------------------------------------------------------------------------------
+
+type addFn = (x: number, y: number) => number;
+
+function add5(x: number, y: number) : number {
+  return x + y;
+}
+
+function calculate2(x: number, y: number, operation: addFn) : number {
+  const result = operation(x, y);
+  return result;
+}
+console.log(calculate2(40, 20, add5));
+
+// ================================================================================================
