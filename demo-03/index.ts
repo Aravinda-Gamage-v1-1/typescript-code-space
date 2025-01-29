@@ -172,4 +172,69 @@ function calculate2(x: number, y: number, operation: addFn) : number {
 }
 console.log(calculate2(40, 20, add5));
 
+// --------------------------------------------------------------------------------
+// Arrow Functions
+const add6 = (x: number, y: number) : number => {
+  return x + y;
+}
+console.log(add6(40, 50));
+
 // ================================================================================================
+// Objects
+const person2 = {
+  name: 'John',
+  address: 'Galle'
+};
+console.log(person2);
+console.log(person2.name);
+
+// --------------------------------------------------------------------------------
+
+const person3: {name: string, address: string} = {
+  name: 'John',
+  address: 'Galle'
+};
+console.log(person3);
+console.log(person3.address);
+
+// --------------------------------------------------------------------------------
+
+interface Person4 {
+  name: string;
+  address: string;
+}
+
+const person4: Person4 = {
+  name: 'Harry',
+  address: 'London'
+}
+console.log(person4);
+console.log(person4.name);
+
+// --------------------------------------------------------------------------------
+
+const obj = {
+  a: 10,
+  b: {
+    c: 30,
+  }
+}
+const {a, b} = obj;
+console.log(a, b.c);
+
+// ================================================================================================
+// Classes
+class Demo {
+  private myVariable: string;
+
+  constructor(myVariable: string) {
+    this.myVariable = myVariable;
+  }
+
+  getMyVariable(){
+    return this.myVariable;
+  }
+}
+
+const demo = new Demo("Hello, World!");
+console.log(demo.getMyVariable());

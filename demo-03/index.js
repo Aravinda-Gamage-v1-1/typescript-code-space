@@ -117,4 +117,52 @@ function calculate2(x, y, operation) {
     return result;
 }
 console.log(calculate2(40, 20, add5));
+// --------------------------------------------------------------------------------
+// Arrow Functions
+var add6 = function (x, y) {
+    return x + y;
+};
+console.log(add6(40, 50));
 // ================================================================================================
+// Objects
+var person2 = {
+    name: 'John',
+    address: 'Galle'
+};
+console.log(person2);
+console.log(person2.name);
+// --------------------------------------------------------------------------------
+var person3 = {
+    name: 'John',
+    address: 'Galle'
+};
+console.log(person3);
+console.log(person3.address);
+var person4 = {
+    name: 'Harry',
+    address: 'London'
+};
+console.log(person4);
+console.log(person4.name);
+// --------------------------------------------------------------------------------
+var obj = {
+    a: 10,
+    b: {
+        c: 30,
+    }
+};
+var a = obj.a, b = obj.b;
+console.log(a, b.c);
+// ================================================================================================
+// Classes
+var Demo = /** @class */ (function () {
+    function Demo(myVariable) {
+        this.myVariable = myVariable;
+    }
+    Demo.prototype.getMyVariable = function () {
+        return this.myVariable;
+    };
+    return Demo;
+}());
+var demo = new Demo("Hello, World!");
+console.log(demo.getMyVariable());
